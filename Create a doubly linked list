@@ -1,0 +1,31 @@
+#DHIRAJ
+#121910313012
+
+#Create a doubly linked list
+
+class node:
+	def _init_(self,data):
+		self.data = data
+		self.prev = None
+		self.next = None
+
+class LinkedList:
+	def _init_(self):
+		self.head = None
+
+	def display(self):
+		ele = []
+		cur = self.head
+		while cur:
+			ele.append(cur.data)
+			cur = cur.next
+		print("Doubly LinkedList: ",ele)
+
+DLL = LinkedList()
+
+DLL.head = node(10)
+DLL.head.next = node(20)
+DLL.head.next.next = node(30)
+
+
+DLL.display()
