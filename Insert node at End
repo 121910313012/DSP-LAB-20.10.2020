@@ -1,0 +1,45 @@
+#DHIRAJ
+#121910313012
+
+#Insert node at End
+
+class node:
+	def _init_(self,data):
+		self.data = data
+		self.prev = None
+		self.next = None
+		
+class LinkedList:
+	def _init_(self):
+		self.head = None
+
+	def atEnd(self,data):
+		new_node = node(data)
+
+		if self.head == None:
+			self.head = new_node
+		else:
+			cur = self.head
+			while cur:
+				if cur.next == None:
+					cur.next = new_node
+					new_node.next = None
+					new_node.prev = cur
+				cur = cur.next
+
+	def display(self):
+		ele = []
+		cur = self.head
+		while cur:
+			ele.append(cur.data)
+			cur = cur.next
+		print("Doubly LinkedList: ",ele)
+
+DLL = LinkedList()
+
+DLL.head = node(10)
+DLL.head.next = node(20)
+DLL.atEnd(30)
+DLL.atEnd(40)
+
+DLL.display()
